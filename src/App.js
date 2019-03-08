@@ -2,6 +2,7 @@ import React, { createContext } from 'react';
 
 import ToggleButton from './Toggle';
 import { useTitleInput } from './hooks/useTitleInput';
+import Counter from './Counter';
 
 export const UserContext = createContext();
 
@@ -15,6 +16,8 @@ const App = () => {
       <div className="main-wrapper">
         <h1>Level Up Dishes</h1>
         <ToggleButton />
+
+        <Counter />
 
         <form
           onSubmit={e => {
