@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useMemo } from 'react';
 
 import ToggleButton from './Toggle';
 import { useTitleInput } from './hooks/useTitleInput';
@@ -11,10 +11,21 @@ const App = () => {
   // const [value, setValue] = useState(initialState)
   const [name, setName] = useTitleInput('');
 
+  const reverseWord = word => {
+    console.log('function called');
+    return word
+      .split('')
+      .reverse()
+      .join('');
+  };
+
+  const title = 'Level Up Dishes';
+  const TitleReversed = useMemo(() => reverseWord(title), [title]);
+
   return (
     <UserContext.Provider value={{ user: true }}>
       <div className="main-wrapper">
-        <h1>Level Up Dishes</h1>
+        <h1>{TitleReversed}</h1>
         <ToggleButton />
 
         <Counter />
