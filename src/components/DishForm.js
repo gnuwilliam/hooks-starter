@@ -5,8 +5,10 @@ import { useOnClickOutside } from '../hooks/useOnClickOutside';
 
 const DishForm = ({ setToggle }) => {
   const ref = useRef();
+
   useOnClickOutside(ref, () => setToggle(false));
   useBodyScrollLock();
+
   return (
     <div className="dish-card" ref={ref}>
       <form>
